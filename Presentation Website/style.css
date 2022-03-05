@@ -1,0 +1,104 @@
+/* Root scope (Using the concept of Variables) */
+:root {
+  --page-1-color: steelblue;
+  --page-2-color: tan;
+  --page-3-color: teal;
+  --page-4-color: slateblue;
+  --animate-sped: 1s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Page colors */
+
+#page1 {
+  background-color: var(--page-1-color);
+}
+#page2 {
+  background-color: var(--page-2-color);
+}
+#page3 {
+  background-color: var(--page-3-color);
+}
+#page4 {
+  background-color: var(--page-4-color);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 4rem;
+}
+
+.page h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin: 1rem;
+}
+
+.page p {
+  font-size: 1.3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #f4f4f4;
+  color: #333;
+  text-decoration: none;
+  border: none;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in;
+}
+
+.btn:hover,
+.btnDark {
+  background: #333;
+  color: #fff;
+}
+
+.btnDark:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* LANDING PAGE ANIMATION */
+#page1 h1 {
+  transform: translateY(-1200px);
+  animation: heading var(--animate-sped) forwards ease-in;
+}
+
+@keyframes heading {
+  to {
+    transform: translateY(0);
+  }
+}
+
+#page1 p {
+  transform: translateX(-1200px);
+  animation: paragraph var(--animate-sped) forwards ease-in;
+  animation-delay: 1s;
+}
+
+@keyframes paragraph {
+  to {
+    transform: translateX(0);
+  }
+}
