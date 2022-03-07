@@ -40,6 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.4s ease;
 }
 
 /* Hamburger Line Top and Bottom Line */
@@ -57,4 +58,29 @@
 
 .menuWrap .hamburger > div::after {
   top: 10px;
+}
+
+/* Toggler Animation */
+.menuWrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* This takes the shape of X */
+.menuWrap .toggler:checked + .hamburger > div::before,
+.menuWrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate on hover when checked */
+.menuWrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* Rotate on Hover when clicked */
+
+.menuWrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
