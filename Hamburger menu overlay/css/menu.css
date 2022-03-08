@@ -77,10 +77,68 @@
   transform: rotate(225deg);
 }
 
-/* Rotate on Hover when clicked */
+/* Menu will appear when we click  */
+/* * '~' is used to access any element if it is not a direct child or a direct sibling */
+
+.menuWrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menuWrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menuWrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
 
 .menuWrap .menu {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuWrap .menu > div {
+  background-color: var(--overlay-color);
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menuWrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menuWrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.menuWrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.menuWrap .menu > div > div > ul > li > a:hover {
+  color: var(--secondary-color);
 }
